@@ -394,7 +394,7 @@
     ],
     "records": []
   },
-  "currentCatId": "asset",
+  "currentCatId": "math",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
@@ -404,5 +404,5 @@
     "work": "时间是不可再生资源，要珍惜。",
     "math": "我会用这项技能给我自由的权利。"
   },
-  "updatedAt": 1785681587563
+  "updatedAt": 1785681590257
 }
