@@ -29,30 +29,6 @@
       "subs": []
     },
     {
-      "id": "health",
-      "name": "健康记录",
-      "emoji": "📊",
-      "builtin": true,
-      "type": "health",
-      "subs": []
-    },
-    {
-      "id": "calendar",
-      "name": "日历打卡",
-      "emoji": "📅",
-      "builtin": true,
-      "type": "calendar",
-      "subs": []
-    },
-    {
-      "id": "asset",
-      "name": "资产管理",
-      "emoji": "💰",
-      "builtin": true,
-      "type": "asset",
-      "subs": []
-    },
-    {
       "id": "english",
       "name": "英语",
       "emoji": "🌏",
@@ -107,278 +83,291 @@
       "emoji": "🌿",
       "builtin": true,
       "subs": []
+    },
+    {
+      "id": "health",
+      "name": "健康记录",
+      "emoji": "📊",
+      "builtin": true,
+      "type": "health",
+      "subs": []
+    },
+    {
+      "id": "calendar",
+      "name": "日历打卡",
+      "emoji": "📅",
+      "builtin": true,
+      "type": "calendar",
+      "subs": []
+    },
+    {
+      "id": "asset",
+      "name": "资产管理",
+      "emoji": "💰",
+      "builtin": true,
+      "type": "asset",
+      "subs": []
     }
   ],
   "items": {
     "work": [
       {
-        "id": "id_msa8yrxz3zp3",
-        "text": "智效倍增数据通报（区域/商家）",
+        "id": "id_ms9xcwry7amo",
+        "text": "学习邀约板块（系统/商家的实际问题）",
         "note": "",
         "done": false,
-        "created": 1785581236727,
-        "order": 3
-      },
-      {
-        "id": "id_msa8yh9490yr",
-        "text": "邀约板块学习（系统/商家的实际问题）",
-        "note": "",
-        "done": false,
-        "created": 1785581222873,
+        "created": 1785561740782,
         "order": 2
       },
       {
-        "id": "id_msa8y43tnkut",
+        "id": "id_ms9xcl0ct2xz",
+        "text": "智效倍增数据（区域/商家）",
+        "note": "",
+        "done": false,
+        "created": 1785561725532,
+        "order": 3
+      },
+      {
+        "id": "id_ms9xc3y6r4ai",
         "text": "网销、官方渠道数据通报",
         "note": "",
         "done": false,
-        "created": 1785581205834,
+        "created": 1785561703422,
         "order": 1
       },
       {
-        "id": "id_msa8xsgsdoeo",
+        "id": "id_ms9xbrmnptpq",
         "text": "新媒体数据（区域/商家/后台）",
         "note": "",
         "done": false,
-        "created": 1785581190748,
+        "created": 1785561687455,
         "order": 0
       }
     ],
     "morning": [
       {
-        "id": "id_msa8zqf1cal2",
+        "id": "id_ms9xe8yxmcq3",
         "text": "出门（地铁上要看书哦）",
         "note": "",
         "done": false,
-        "created": 1785581281405,
+        "created": 1785561803241,
         "order": 5
       },
       {
-        "id": "id_msa8zj976gup",
+        "id": "id_ms9xe15ci7zl",
         "text": "背单词",
         "note": "",
         "done": false,
-        "created": 1785581272123,
+        "created": 1785561793104,
         "order": 4
       },
       {
-        "id": "id_msa8zge5nvzu",
+        "id": "id_ms9xdyf4vjzr",
         "text": "吃饭",
         "note": "",
         "done": false,
-        "created": 1785581268413,
+        "created": 1785561789568,
         "order": 3
       },
       {
-        "id": "id_msa8zdwya7k8",
+        "id": "id_ms9xdta70b7d",
         "text": "洗漱",
         "note": "",
         "done": false,
-        "created": 1785581265202,
+        "created": 1785561782911,
         "order": 2
       },
       {
-        "id": "id_msa8z8x8vh4s",
+        "id": "id_ms9xdlwp9yc3",
         "text": "煮早饭",
         "note": "",
         "done": false,
-        "created": 1785581258732,
+        "created": 1785561773353,
         "order": 1
       },
       {
-        "id": "id_msa8z4tnsakl",
+        "id": "id_ms9xd5tlyw1l",
         "text": "7:00起床",
         "note": "",
         "done": false,
-        "created": 1785581253419,
+        "created": 1785561752505,
         "order": 0
       }
     ],
     "noon": [
       {
-        "id": "id_msa91lgbscsm",
+        "id": "id_ms9xfmvvlxh4",
         "text": "午睡30分钟以内",
         "note": "",
         "done": false,
-        "created": 1785581368283,
+        "created": 1785561867931,
         "order": 2
       },
       {
-        "id": "id_msa91e2bhzka",
+        "id": "id_ms9xfgirr8nq",
         "text": "看新闻/背单词/看书",
         "note": "",
         "done": false,
-        "created": 1785581358707,
+        "created": 1785561859683,
         "order": 1
       },
       {
-        "id": "id_msa90w0fla5a",
+        "id": "id_ms9xf78edure",
         "text": "少油少盐的饭（同时看美剧）",
         "note": "",
         "done": false,
-        "created": 1785581335311,
+        "created": 1785561847646,
         "order": 0
       }
     ],
     "evening": [
       {
-        "id": "id_msa936516wsp",
-        "text": "放松（八段锦/拉伸/泡脚/玩手机）",
-        "note": "",
-        "done": false,
-        "created": 1785581441749,
-        "order": 4
-      },
-      {
-        "id": "id_msa92kvyqwf8",
+        "id": "id_ms9xi7v4roxm",
         "text": "学英语",
         "note": "",
         "done": false,
-        "created": 1785581414206,
+        "created": 1785561988432,
         "order": 3
       },
       {
-        "id": "id_msa92i4hg8ak",
-        "text": "学数分",
+        "id": "id_ms9xi0apbu95",
+        "text": "学数分/编程",
         "note": "",
         "done": false,
-        "created": 1785581410625,
+        "created": 1785561978625,
         "order": 2
       },
       {
-        "id": "id_msa92cv246wj",
+        "id": "id_ms9xgo6xdg25",
+        "text": "放松（八段锦/泡脚/拉伸/玩手机）",
+        "note": "",
+        "done": false,
+        "created": 1785561916281,
+        "order": 4
+      },
+      {
+        "id": "id_ms9xfujdooly",
         "text": "刷碗",
         "note": "",
         "done": false,
-        "created": 1785581403806,
+        "created": 1785561877849,
         "order": 1
       },
       {
-        "id": "id_msa926a5z88h",
+        "id": "id_ms9xfrcm0agd",
         "text": "吃饭",
         "note": "",
         "done": false,
-        "created": 1785581395277,
+        "created": 1785561873718,
         "order": 0
       }
     ],
-    "health": [],
-    "calendar": [],
-    "asset": [],
     "english": [],
     "math": [],
     "finance": [
       {
-        "id": "id_msa946y9meyf",
-        "text": "公积金转入农行账户（不能动）",
+        "id": "id_ms9x9p6hpjnl",
+        "text": "公积金转到农行卡（不能动）",
         "note": "",
         "done": false,
-        "created": 1785581489457,
+        "created": 1785561590970,
         "order": 0
       }
     ],
     "posture": [
       {
-        "id": "id_msa94nsbajcr",
+        "id": "id_ms9xkf4dulys",
         "text": "手环提醒站立后拉伸一分钟",
         "note": "",
         "done": false,
-        "created": 1785581511275,
+        "created": 1785562091149,
         "order": 0
       }
     ],
     "books": [],
     "hobby": [
       {
-        "id": "id_msa95q87d4g2",
+        "id": "id_ms9yzx8hyjqa",
         "text": "羽毛球",
         "note": "",
         "done": false,
-        "created": 1785581561095,
+        "created": 1785564494081,
         "order": 0
       },
       {
-        "id": "id_msa95lpt9jqs",
-        "text": "健身",
-        "note": "",
-        "done": false,
-        "created": 1785581555249,
-        "order": 0
-      },
-      {
-        "id": "id_msa95iz643s0",
+        "id": "id_ms9yztr47m1z",
         "text": "游泳",
         "note": "",
         "done": false,
-        "created": 1785581551698,
+        "created": 1785564489568,
         "order": 0
       },
       {
-        "id": "id_msa95dy5ubrs",
+        "id": "id_ms9yzovvzo1v",
         "text": "骑行",
         "note": "",
         "done": false,
-        "created": 1785581545181,
+        "created": 1785564483259,
         "order": 0
       },
       {
-        "id": "id_msa9566pems8",
+        "id": "id_ms9yppi0a0sw",
         "text": "吉他",
         "note": "",
         "done": false,
-        "created": 1785581535121,
-        "order": 0
+        "created": 1785564017496,
+        "order": 2
       },
       {
-        "id": "id_msa953te15am",
+        "id": "id_ms9ypmljbbn3",
         "text": "钢琴",
         "note": "",
         "done": false,
-        "created": 1785581532050,
-        "order": 0
+        "created": 1785564013735,
+        "order": 1
       },
       {
-        "id": "id_msa94yd5gsax",
+        "id": "id_ms9ypjvhig5b",
         "text": "水彩",
         "note": "",
         "done": false,
-        "created": 1785581524985,
+        "created": 1785564010205,
         "order": 0
       }
     ],
     "travel": [
       {
-        "id": "id_msa95xp0iz9h",
+        "id": "id_ms9yq1aclw86",
         "text": "西北大环线",
         "note": "",
         "done": false,
-        "created": 1785581570772,
+        "created": 1785564032772,
         "order": 0
       }
     ],
     "about": [
       {
-        "id": "id_msa9akdn68lf",
-        "text": "我与我周旋久，宁作我。",
-        "note": "",
-        "done": false,
-        "created": 1785581786795,
-        "order": 0
-      },
-      {
-        "id": "id_msa9a2pk23nw",
-        "text": "我要驾驭命运，而非被命运裹挟。",
-        "note": "",
-        "done": false,
-        "created": 1785581763896,
-        "order": 0
-      },
-      {
-        "id": "id_msa972smg4sb",
+        "id": "id_ms9yye60vte3",
         "text": "我生于壬午火炎，却蓄癸水清流；我被官杀围困，却养卯木作舟。此身向来以柔克刚，以静制动——\n若世界给我无序的题，我便还它有序的答。",
         "note": "",
         "done": false,
-        "created": 1785581624038,
+        "created": 1785564422712,
+        "order": 0
+      },
+      {
+        "id": "id_ms9ywta97g9v",
+        "text": "我会驾驭命运，而非被命运裹挟",
+        "note": "",
+        "done": false,
+        "created": 1785564348993,
+        "order": 0
+      },
+      {
+        "id": "id_ms9ysy0onpbc",
+        "text": "我与我周旋久，宁作我",
+        "note": "",
+        "done": false,
+        "created": 1785564168504,
         "order": 0
       }
     ]
@@ -394,15 +383,12 @@
     ],
     "records": []
   },
-  "currentCatId": "math",
+  "currentCatId": "work",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
-    "finance": "财富积累的本质是换取自由。",
-    "english": "我一定要学好英语，接触最前沿的信息。",
-    "work": "时间是不可再生资源，要珍惜。",
-    "math": "我会用这项技能给我自由的权利。"
+    "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785681590257
+  "updatedAt": 1785681604998
 }
