@@ -29,6 +29,30 @@
       "subs": []
     },
     {
+      "id": "health",
+      "name": "健康记录",
+      "emoji": "📊",
+      "builtin": true,
+      "type": "health",
+      "subs": []
+    },
+    {
+      "id": "calendar",
+      "name": "日历打卡",
+      "emoji": "📅",
+      "builtin": true,
+      "type": "calendar",
+      "subs": []
+    },
+    {
+      "id": "asset",
+      "name": "资产管理",
+      "emoji": "💰",
+      "builtin": true,
+      "type": "asset",
+      "subs": []
+    },
+    {
       "id": "english",
       "name": "英语",
       "emoji": "🌏",
@@ -45,7 +69,7 @@
     {
       "id": "finance",
       "name": "理财",
-      "emoji": "💰",
+      "emoji": "🏦",
       "builtin": true,
       "subs": []
     },
@@ -83,294 +107,24 @@
       "emoji": "🌿",
       "builtin": true,
       "subs": []
-    },
-    {
-      "id": "health",
-      "name": "健康记录",
-      "emoji": "📊",
-      "builtin": true,
-      "type": "health",
-      "subs": []
-    },
-    {
-      "id": "calendar",
-      "name": "日历打卡",
-      "emoji": "📅",
-      "builtin": true,
-      "type": "calendar",
-      "subs": []
-    },
-    {
-      "id": "asset",
-      "name": "资产管理",
-      "emoji": "💰",
-      "builtin": true,
-      "type": "asset",
-      "subs": []
     }
   ],
   "items": {
-    "work": [
-      {
-        "id": "id_ms9xcwry7amo",
-        "text": "学习邀约板块（系统/商家的实际问题）",
-        "note": "",
-        "done": false,
-        "created": 1785561740782,
-        "order": 2
-      },
-      {
-        "id": "id_ms9xcl0ct2xz",
-        "text": "智效倍增数据（区域/商家）",
-        "note": "",
-        "done": false,
-        "created": 1785561725532,
-        "order": 3
-      },
-      {
-        "id": "id_ms9xc3y6r4ai",
-        "text": "网销、官方渠道数据通报",
-        "note": "",
-        "done": false,
-        "created": 1785561703422,
-        "order": 1
-      },
-      {
-        "id": "id_ms9xbrmnptpq",
-        "text": "新媒体数据（区域/商家/后台）",
-        "note": "",
-        "done": false,
-        "created": 1785561687455,
-        "order": 0
-      }
-    ],
-    "morning": [
-      {
-        "id": "id_ms9xe8yxmcq3",
-        "text": "出门（地铁上要看书哦）",
-        "note": "",
-        "done": false,
-        "created": 1785561803241,
-        "order": 5
-      },
-      {
-        "id": "id_ms9xe15ci7zl",
-        "text": "背单词",
-        "note": "",
-        "done": false,
-        "created": 1785561793104,
-        "order": 4
-      },
-      {
-        "id": "id_ms9xdyf4vjzr",
-        "text": "吃饭",
-        "note": "",
-        "done": false,
-        "created": 1785561789568,
-        "order": 3
-      },
-      {
-        "id": "id_ms9xdta70b7d",
-        "text": "洗漱",
-        "note": "",
-        "done": false,
-        "created": 1785561782911,
-        "order": 2
-      },
-      {
-        "id": "id_ms9xdlwp9yc3",
-        "text": "煮早饭",
-        "note": "",
-        "done": false,
-        "created": 1785561773353,
-        "order": 1
-      },
-      {
-        "id": "id_ms9xd5tlyw1l",
-        "text": "7:00起床",
-        "note": "",
-        "done": false,
-        "created": 1785561752505,
-        "order": 0
-      }
-    ],
-    "noon": [
-      {
-        "id": "id_ms9xfmvvlxh4",
-        "text": "午睡30分钟以内",
-        "note": "",
-        "done": false,
-        "created": 1785561867931,
-        "order": 2
-      },
-      {
-        "id": "id_ms9xfgirr8nq",
-        "text": "看新闻/背单词/看书",
-        "note": "",
-        "done": false,
-        "created": 1785561859683,
-        "order": 1
-      },
-      {
-        "id": "id_ms9xf78edure",
-        "text": "少油少盐的饭（同时看美剧）",
-        "note": "",
-        "done": false,
-        "created": 1785561847646,
-        "order": 0
-      }
-    ],
-    "evening": [
-      {
-        "id": "id_ms9xi7v4roxm",
-        "text": "学英语",
-        "note": "",
-        "done": false,
-        "created": 1785561988432,
-        "order": 3
-      },
-      {
-        "id": "id_ms9xi0apbu95",
-        "text": "学数分/编程",
-        "note": "",
-        "done": false,
-        "created": 1785561978625,
-        "order": 2
-      },
-      {
-        "id": "id_ms9xgo6xdg25",
-        "text": "放松（八段锦/泡脚/拉伸/玩手机）",
-        "note": "",
-        "done": false,
-        "created": 1785561916281,
-        "order": 4
-      },
-      {
-        "id": "id_ms9xfujdooly",
-        "text": "刷碗",
-        "note": "",
-        "done": false,
-        "created": 1785561877849,
-        "order": 1
-      },
-      {
-        "id": "id_ms9xfrcm0agd",
-        "text": "吃饭",
-        "note": "",
-        "done": false,
-        "created": 1785561873718,
-        "order": 0
-      }
-    ],
+    "work": [],
+    "morning": [],
+    "noon": [],
+    "evening": [],
+    "health": [],
+    "calendar": [],
+    "asset": [],
     "english": [],
     "math": [],
-    "finance": [
-      {
-        "id": "id_ms9x9p6hpjnl",
-        "text": "公积金转到农行卡（不能动）",
-        "note": "",
-        "done": false,
-        "created": 1785561590970,
-        "order": 0
-      }
-    ],
-    "posture": [
-      {
-        "id": "id_ms9xkf4dulys",
-        "text": "手环提醒站立后拉伸一分钟",
-        "note": "",
-        "done": false,
-        "created": 1785562091149,
-        "order": 0
-      }
-    ],
+    "finance": [],
+    "posture": [],
     "books": [],
-    "hobby": [
-      {
-        "id": "id_ms9yzx8hyjqa",
-        "text": "羽毛球",
-        "note": "",
-        "done": false,
-        "created": 1785564494081,
-        "order": 0
-      },
-      {
-        "id": "id_ms9yztr47m1z",
-        "text": "游泳",
-        "note": "",
-        "done": false,
-        "created": 1785564489568,
-        "order": 0
-      },
-      {
-        "id": "id_ms9yzovvzo1v",
-        "text": "骑行",
-        "note": "",
-        "done": false,
-        "created": 1785564483259,
-        "order": 0
-      },
-      {
-        "id": "id_ms9yppi0a0sw",
-        "text": "吉他",
-        "note": "",
-        "done": false,
-        "created": 1785564017496,
-        "order": 2
-      },
-      {
-        "id": "id_ms9ypmljbbn3",
-        "text": "钢琴",
-        "note": "",
-        "done": false,
-        "created": 1785564013735,
-        "order": 1
-      },
-      {
-        "id": "id_ms9ypjvhig5b",
-        "text": "水彩",
-        "note": "",
-        "done": false,
-        "created": 1785564010205,
-        "order": 0
-      }
-    ],
-    "travel": [
-      {
-        "id": "id_ms9yq1aclw86",
-        "text": "西北大环线",
-        "note": "",
-        "done": false,
-        "created": 1785564032772,
-        "order": 0
-      }
-    ],
-    "about": [
-      {
-        "id": "id_ms9yye60vte3",
-        "text": "我生于壬午火炎，却蓄癸水清流；我被官杀围困，却养卯木作舟。此身向来以柔克刚，以静制动——\n若世界给我无序的题，我便还它有序的答。",
-        "note": "",
-        "done": false,
-        "created": 1785564422712,
-        "order": 0
-      },
-      {
-        "id": "id_ms9ywta97g9v",
-        "text": "我会驾驭命运，而非被命运裹挟",
-        "note": "",
-        "done": false,
-        "created": 1785564348993,
-        "order": 0
-      },
-      {
-        "id": "id_ms9ysy0onpbc",
-        "text": "我与我周旋久，宁作我",
-        "note": "",
-        "done": false,
-        "created": 1785564168504,
-        "order": 0
-      }
-    ]
+    "hobby": [],
+    "travel": [],
+    "about": []
   },
   "health": {
     "sleep": [],
@@ -383,12 +137,10 @@
     ],
     "records": []
   },
-  "currentCatId": "posture",
+  "currentCatId": "calendar",
   "currentSubId": "",
-  "userName": "嘉怡的精神世界",
-  "userSub": "这工作台是我建的，这人生也是。",
-  "heroSubs": {
-    "finance": "财富积累的本质是换取自由"
-  },
-  "updatedAt": 1785678802874
+  "userName": "我的工作台",
+  "userSub": "点选分类切换 · 长按可管理",
+  "heroSubs": {},
+  "updatedAt": 1785681407214
 }
