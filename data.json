@@ -69,7 +69,7 @@
     {
       "id": "finance",
       "name": "理财",
-      "emoji": "💰",
+      "emoji": "🏦",
       "builtin": true,
       "subs": []
     },
@@ -110,278 +110,21 @@
     }
   ],
   "items": {
-    "work": [
-      {
-        "id": "id_msa8yrxz3zp3",
-        "text": "智效倍增数据通报（区域/商家）",
-        "note": "",
-        "done": false,
-        "created": 1785581236727,
-        "order": 3
-      },
-      {
-        "id": "id_msa8yh9490yr",
-        "text": "邀约板块学习（系统/商家的实际问题）",
-        "note": "",
-        "done": false,
-        "created": 1785581222873,
-        "order": 2
-      },
-      {
-        "id": "id_msa8y43tnkut",
-        "text": "网销、官方渠道数据通报",
-        "note": "",
-        "done": false,
-        "created": 1785581205834,
-        "order": 1
-      },
-      {
-        "id": "id_msa8xsgsdoeo",
-        "text": "新媒体数据（区域/商家/后台）",
-        "note": "",
-        "done": false,
-        "created": 1785581190748,
-        "order": 0
-      }
-    ],
-    "morning": [
-      {
-        "id": "id_msa8zqf1cal2",
-        "text": "出门（地铁上要看书哦）",
-        "note": "",
-        "done": false,
-        "created": 1785581281405,
-        "order": 5
-      },
-      {
-        "id": "id_msa8zj976gup",
-        "text": "背单词",
-        "note": "",
-        "done": false,
-        "created": 1785581272123,
-        "order": 4
-      },
-      {
-        "id": "id_msa8zge5nvzu",
-        "text": "吃饭",
-        "note": "",
-        "done": false,
-        "created": 1785581268413,
-        "order": 3
-      },
-      {
-        "id": "id_msa8zdwya7k8",
-        "text": "洗漱",
-        "note": "",
-        "done": false,
-        "created": 1785581265202,
-        "order": 2
-      },
-      {
-        "id": "id_msa8z8x8vh4s",
-        "text": "煮早饭",
-        "note": "",
-        "done": false,
-        "created": 1785581258732,
-        "order": 1
-      },
-      {
-        "id": "id_msa8z4tnsakl",
-        "text": "7:00起床",
-        "note": "",
-        "done": false,
-        "created": 1785581253419,
-        "order": 0
-      }
-    ],
-    "noon": [
-      {
-        "id": "id_msa91lgbscsm",
-        "text": "午睡30分钟以内",
-        "note": "",
-        "done": false,
-        "created": 1785581368283,
-        "order": 2
-      },
-      {
-        "id": "id_msa91e2bhzka",
-        "text": "看新闻/背单词/看书",
-        "note": "",
-        "done": false,
-        "created": 1785581358707,
-        "order": 1
-      },
-      {
-        "id": "id_msa90w0fla5a",
-        "text": "少油少盐的饭（同时看美剧）",
-        "note": "",
-        "done": false,
-        "created": 1785581335311,
-        "order": 0
-      }
-    ],
-    "evening": [
-      {
-        "id": "id_msa936516wsp",
-        "text": "放松（八段锦/拉伸/泡脚/玩手机）",
-        "note": "",
-        "done": false,
-        "created": 1785581441749,
-        "order": 4
-      },
-      {
-        "id": "id_msa92kvyqwf8",
-        "text": "学英语",
-        "note": "",
-        "done": false,
-        "created": 1785581414206,
-        "order": 3
-      },
-      {
-        "id": "id_msa92i4hg8ak",
-        "text": "学数分",
-        "note": "",
-        "done": false,
-        "created": 1785581410625,
-        "order": 2
-      },
-      {
-        "id": "id_msa92cv246wj",
-        "text": "刷碗",
-        "note": "",
-        "done": false,
-        "created": 1785581403806,
-        "order": 1
-      },
-      {
-        "id": "id_msa926a5z88h",
-        "text": "吃饭",
-        "note": "",
-        "done": false,
-        "created": 1785581395277,
-        "order": 0
-      }
-    ],
+    "work": [],
+    "morning": [],
+    "noon": [],
+    "evening": [],
     "health": [],
     "calendar": [],
     "asset": [],
     "english": [],
     "math": [],
-    "finance": [
-      {
-        "id": "id_msa946y9meyf",
-        "text": "公积金转入农行账户（不能动）",
-        "note": "",
-        "done": false,
-        "created": 1785581489457,
-        "order": 0
-      }
-    ],
-    "posture": [
-      {
-        "id": "id_msa94nsbajcr",
-        "text": "手环提醒站立后拉伸一分钟",
-        "note": "",
-        "done": false,
-        "created": 1785581511275,
-        "order": 0
-      }
-    ],
+    "finance": [],
+    "posture": [],
     "books": [],
-    "hobby": [
-      {
-        "id": "id_msa95q87d4g2",
-        "text": "羽毛球",
-        "note": "",
-        "done": false,
-        "created": 1785581561095,
-        "order": 0
-      },
-      {
-        "id": "id_msa95lpt9jqs",
-        "text": "健身",
-        "note": "",
-        "done": false,
-        "created": 1785581555249,
-        "order": 0
-      },
-      {
-        "id": "id_msa95iz643s0",
-        "text": "游泳",
-        "note": "",
-        "done": false,
-        "created": 1785581551698,
-        "order": 0
-      },
-      {
-        "id": "id_msa95dy5ubrs",
-        "text": "骑行",
-        "note": "",
-        "done": false,
-        "created": 1785581545181,
-        "order": 0
-      },
-      {
-        "id": "id_msa9566pems8",
-        "text": "吉他",
-        "note": "",
-        "done": false,
-        "created": 1785581535121,
-        "order": 0
-      },
-      {
-        "id": "id_msa953te15am",
-        "text": "钢琴",
-        "note": "",
-        "done": false,
-        "created": 1785581532050,
-        "order": 0
-      },
-      {
-        "id": "id_msa94yd5gsax",
-        "text": "水彩",
-        "note": "",
-        "done": false,
-        "created": 1785581524985,
-        "order": 0
-      }
-    ],
-    "travel": [
-      {
-        "id": "id_msa95xp0iz9h",
-        "text": "西北大环线",
-        "note": "",
-        "done": false,
-        "created": 1785581570772,
-        "order": 0
-      }
-    ],
-    "about": [
-      {
-        "id": "id_msa9akdn68lf",
-        "text": "我与我周旋久，宁作我。",
-        "note": "",
-        "done": false,
-        "created": 1785581786795,
-        "order": 0
-      },
-      {
-        "id": "id_msa9a2pk23nw",
-        "text": "我要驾驭命运，而非被命运裹挟。",
-        "note": "",
-        "done": false,
-        "created": 1785581763896,
-        "order": 0
-      },
-      {
-        "id": "id_msa972smg4sb",
-        "text": "我生于壬午火炎，却蓄癸水清流；我被官杀围困，却养卯木作舟。此身向来以柔克刚，以静制动——\n若世界给我无序的题，我便还它有序的答。",
-        "note": "",
-        "done": false,
-        "created": 1785581624038,
-        "order": 0
-      }
-    ]
+    "hobby": [],
+    "travel": [],
+    "about": []
   },
   "health": {
     "sleep": [],
@@ -394,15 +137,10 @@
     ],
     "records": []
   },
-  "currentCatId": "asset",
+  "currentCatId": "work",
   "currentSubId": "",
-  "userName": "嘉怡的精神世界",
-  "userSub": "这工作台是我建的，这人生也是。",
-  "heroSubs": {
-    "finance": "财富积累的本质是换取自由。",
-    "english": "我一定要学好英语，接触最前沿的信息。",
-    "work": "时间是不可再生资源，要珍惜。",
-    "math": "我会用这项技能给我自由的权利。"
-  },
-  "updatedAt": 1785681486061
+  "userName": "我的工作台",
+  "userSub": "点选分类切换 · 长按可管理",
+  "heroSubs": {},
+  "updatedAt": 1785681533933
 }
