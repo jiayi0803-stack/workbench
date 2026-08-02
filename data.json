@@ -91,6 +91,22 @@
       "builtin": true,
       "type": "health",
       "subs": []
+    },
+    {
+      "id": "calendar",
+      "name": "日历打卡",
+      "emoji": "📅",
+      "builtin": true,
+      "type": "calendar",
+      "subs": []
+    },
+    {
+      "id": "asset",
+      "name": "资产管理",
+      "emoji": "💰",
+      "builtin": true,
+      "type": "asset",
+      "subs": []
     }
   ],
   "items": {
@@ -367,12 +383,12 @@
     ],
     "records": []
   },
-  "currentCatId": "about",
+  "currentCatId": "posture",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785678731863
+  "updatedAt": 1785678802874
 }
