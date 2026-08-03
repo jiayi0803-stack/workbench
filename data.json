@@ -786,7 +786,17 @@
         "order": 0
       }
     ],
-    "cat_mscwixpn": []
+    "cat_mscwixpn": [
+      {
+        "id": "id_mscwj3koojw2",
+        "text": "开车上路",
+        "note": "",
+        "done": false,
+        "created": 1785741748440,
+        "date": "2026-08-03",
+        "order": 0
+      }
+    ]
   },
   "health": {
     "sleep": [
@@ -821,5 +831,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741742849
+  "updatedAt": 1785741750452
 }
