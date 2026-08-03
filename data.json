@@ -788,6 +788,15 @@
     ],
     "cat_mscwixpn": [
       {
+        "id": "id_mscwjt20vbhv",
+        "text": "至少读24本书",
+        "note": "",
+        "done": false,
+        "created": 1785741781464,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
         "id": "id_mscwjioy3y1n",
         "text": "赚到工资以外的钱至少3000",
         "note": "",
@@ -849,5 +858,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741770042
+  "updatedAt": 1785741783473
 }
