@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -579,6 +578,8 @@
       <button class="manage-btn" id="btn-import" style="flex:1; text-align:center; border:1px solid var(--line)">⬇ 导入数据</button>
     </div>
     <button class="manage-btn" id="btn-cloud-restore" style="text-align:center; border:1px solid var(--accent); color:var(--accent); background:var(--accent-soft)">☁ 从云端恢复数据</button>
+    <button class="manage-btn" id="btn-set-token" style="text-align:center; border:1px solid var(--line); color:var(--ink-soft)">🔑 设置同步 Token</button>
+    <button class="manage-btn" id="btn-export-source" style="text-align:center; border:1px solid var(--line); color:var(--ink-soft)">🧾 导出页面源码</button>
     <input type="file" id="import-file" accept="application/json,.json" style="display:none" />
   </footer>
 </aside>
@@ -655,6 +656,19 @@
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- 导出页面源码 弹窗 -->
+<div class="modal" id="modal-source" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <h3>导出页面源码</h3>
+    <p style="color:var(--ink-soft); font-size:12px; margin:0 0 12px">复制下方完整源码，粘贴到 GitHub 仓库的 index.html 中。源码中不包含 Token。</p>
+    <textarea id="source-output" style="width:100%; min-height:260px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:10px; font-family:monospace; font-size:11px; line-height:1.4" readonly></textarea>
+    <div class="sheet-actions">
+      <button class="btn-ghost" data-close>关闭</button>
+      <button class="btn-primary" id="source-copy">复制</button>
+    </div>
+  </div>
+</div>
 
 <script>
 
@@ -779,7 +793,27 @@ function save() {
 function genId() { return 'id_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 
 /* ========== GitHub 云端同步（用仓库当数据库） ========== */
-const GH_TOKEN = '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';
+// Token 不硬编码在代码里，避免被 GitHub Secret Scanning 撤销
+// 第一次使用时让用户输入，存到 localStorage
+const GH_TOKEN_KEY = 'gh_sync_token';
+function getGHToken() {
+  return localStorage.getItem(GH_TOKEN_KEY) || '';
+}
+function setGHToken(t) {
+  localStorage.setItem(GH_TOKEN_KEY, t);
+}
+// 首次使用时自动提示输入 token（如果没有）
+function ensureToken() {
+  if (!getGHToken()) {
+    const t = prompt('请输入 GitHub Token（用于云端同步，仅保存在本地浏览器，不会上传）：\n\n在 GitHub Settings → Developer settings → Personal access tokens 生成，权限选 Contents: Read and write，仓库选 workbench。');
+    if (t && t.trim()) {
+      setGHToken(t.trim());
+      return true;
+    }
+    return false;
+  }
+  return true;
+}
 const GH_OWNER = 'Jiayi0803-stack';
 const GH_REPO = 'workbench';
 const GH_DATA_FILE = 'data.json';
@@ -788,6 +822,7 @@ const GH_BRANCH = 'main';
 // 防抖：短时间内多次保存只推送一次
 let pushTimer = null;
 function cloudPush() {
+  if (!getGHToken()) return; // 没 token 不同步
   clearTimeout(pushTimer);
   pushTimer = setTimeout(async () => {
     const data = {
@@ -800,7 +835,7 @@ function cloudPush() {
     let sha = null;
     try {
       const r = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}`, {
-        headers: { 'Authorization': `Bearer ${GH_TOKEN}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
+        headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
       });
       if (r.ok) { const j = await r.json(); sha = j.sha; }
     } catch (e) {}
@@ -808,7 +843,7 @@ function cloudPush() {
     try {
       await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}`, {
         method: 'PUT',
-        headers: { 'Authorization': `Bearer ${GH_TOKEN}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json', 'User-Agent': 'workbench' },
+        headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json', 'User-Agent': 'workbench' },
         body: JSON.stringify({ message: 'sync data', content: content, sha: sha, branch: GH_BRANCH })
       });
     } catch (e) {}
@@ -818,9 +853,14 @@ function cloudPush() {
 // 从 GitHub 拉取数据
 // force=true 时忽略时间戳比较，强制用云端覆盖本地（用于手动恢复或本地数据丢失场景）
 async function cloudPull(force) {
+  if (!getGHToken()) {
+    // 没 token 时提示输入（仅 force 模式或首次启动）
+    if (force && !ensureToken()) return false;
+    else if (!force) return false;
+  }
   try {
     const r = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}?ref=${GH_BRANCH}`, {
-      headers: { 'Authorization': `Bearer ${GH_TOKEN}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
+      headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
     });
     if (!r.ok) return false;
     const j = await r.json();
@@ -2032,6 +2072,46 @@ document.getElementById('btn-cloud-restore').addEventListener('click', async () 
     toast('已从云端恢复数据 ✓');
   } else {
     toast('恢复失败：网络或 Token 问题');
+  }
+});
+
+// 设置同步 Token
+document.getElementById('btn-set-token').addEventListener('click', () => {
+  const current = getGHToken();
+  const hint = current ? '（已设置，重新输入可替换）' : '';
+  const t = prompt('请输入 GitHub Token' + hint + '：\n\n仅保存在本地浏览器，不会上传。权限选 Contents: Read and write，仓库选 workbench。', current);
+  if (t !== null && t.trim()) {
+    setGHToken(t.trim());
+    const btn = document.getElementById('btn-set-token');
+    btn.textContent = '🔑 同步 Token 已设置 ✓';
+    btn.style.color = 'var(--accent)';
+    toast('Token 已保存，云端同步已启用');
+    setTimeout(() => { btn.textContent = '🔑 设置同步 Token'; btn.style.color = 'var(--ink-soft)'; }, 2000);
+  }
+});
+
+// 导出页面源码（方便上传到 GitHub Pages）
+document.getElementById('btn-export-source').addEventListener('click', async () => {
+  const modal = document.getElementById('modal-source');
+  const out = document.getElementById('source-output');
+  try {
+    const r = await fetch(location.href);
+    const html = await r.text();
+    out.value = html;
+    modal.classList.add('open');
+    setTimeout(() => out.select(), 100);
+  } catch (e) {
+    toast('获取源码失败');
+  }
+});
+document.getElementById('source-copy').addEventListener('click', () => {
+  const out = document.getElementById('source-output');
+  out.select();
+  try {
+    document.execCommand('copy');
+    toast('源码已复制，去 GitHub 粘贴吧');
+  } catch (e) {
+    toast('复制失败，请长按文本框手动复制');
   }
 });
 
