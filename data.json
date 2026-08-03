@@ -316,7 +316,53 @@
     "health": [],
     "calendar": [],
     "asset": [],
-    "english": [],
+    "english": [
+      {
+        "id": "id_msczcxeqyri2",
+        "text": "4、全真模拟 & 答题策略",
+        "note": "",
+        "done": false,
+        "created": 1785746499362,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msczck10i47l",
+        "text": "3、翻译和写作模板化",
+        "note": "",
+        "done": false,
+        "created": 1785746482020,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msczbzu01d9i",
+        "text": "2、近5年真题，卡时间做（每篇10分钟）",
+        "note": "",
+        "done": false,
+        "created": 1785746455848,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msczb4395tph",
+        "text": "1、B站英语兔视频看完",
+        "note": "",
+        "done": false,
+        "created": 1785746414709,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msczajvu8q8z",
+        "text": "不背单词全部背完",
+        "note": "",
+        "done": false,
+        "created": 1785746388522,
+        "date": "2026-08-03",
+        "order": 0
+      }
+    ],
     "math": [
       {
         "id": "id_mscobxd5gvgk",
@@ -856,7 +902,11 @@
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
-    "finance": "财富积累的本质是换取自由"
+    "finance": "财富积累的本质是换取自由。",
+    "english": "首要目标，通过10.25的学位英语考试，然后就是学到能看懂英文资料的程度，接触前沿信息，获得更好的工作。",
+    "work": "时间是不可再生资源，要珍惜。",
+    "math": "我会用这项技能给我自由的权力。",
+    "asset": "不必要的钱尽量不花，以后的大环境谁也说不好，攒钱才是硬道理，钱会生钱，但是买来的东西不会。"
   },
-  "updatedAt": 1785747949055
+  "updatedAt": 1785749407757
 }
