@@ -151,6 +151,13 @@
       "emoji": "🎯",
       "builtin": false,
       "subs": []
+    },
+    {
+      "id": "cat_mscwixpn",
+      "name": "26年年度目标",
+      "emoji": "🌱",
+      "builtin": false,
+      "subs": []
     }
   ],
   "items": {
@@ -778,7 +785,8 @@
         "date": "2026-08-03",
         "order": 0
       }
-    ]
+    ],
+    "cat_mscwixpn": []
   },
   "health": {
     "sleep": [
@@ -806,12 +814,12 @@
     ],
     "records": []
   },
-  "currentCatId": "cat_mscligyl",
+  "currentCatId": "cat_mscwixpn",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741551734
+  "updatedAt": 1785741742849
 }
