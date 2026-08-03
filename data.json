@@ -107,6 +107,13 @@
       "builtin": true,
       "type": "asset",
       "subs": []
+    },
+    {
+      "id": "cat_mscligyl",
+      "name": "待办",
+      "emoji": "🎯",
+      "builtin": false,
+      "subs": []
     }
   ],
   "items": {
@@ -370,7 +377,8 @@
         "created": 1785564168504,
         "order": 0
       }
-    ]
+    ],
+    "cat_mscligyl": []
   },
   "health": {
     "sleep": [],
@@ -383,12 +391,12 @@
     ],
     "records": []
   },
-  "currentCatId": "morning",
+  "currentCatId": "cat_mscligyl",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785723154862
+  "updatedAt": 1785723245369
 }
