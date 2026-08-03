@@ -790,7 +790,14 @@
         "rating": 5
       }
     ],
-    "body": []
+    "body": [
+      {
+        "id": "id_mscweldhlmen",
+        "date": "2026-08-03",
+        "weight": 53.85,
+        "waist": 77.5
+      }
+    ]
   },
   "assets": {
     "fields": [
@@ -806,5 +813,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741492067
+  "updatedAt": 1785741540232
 }
