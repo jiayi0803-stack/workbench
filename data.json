@@ -781,7 +781,15 @@
     ]
   },
   "health": {
-    "sleep": [],
+    "sleep": [
+      {
+        "id": "id_mscwdk7cubzh",
+        "date": "2026-08-02",
+        "start": "00:22",
+        "end": "07:05",
+        "rating": 5
+      }
+    ],
     "body": []
   },
   "assets": {
@@ -798,5 +806,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741465713
+  "updatedAt": 1785741492067
 }
