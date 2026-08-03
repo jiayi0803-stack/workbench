@@ -788,6 +788,15 @@
     ],
     "cat_mscwixpn": [
       {
+        "id": "id_mscwjagsprlr",
+        "text": "画24幅水彩画",
+        "note": "",
+        "done": false,
+        "created": 1785741757372,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
         "id": "id_mscwj3koojw2",
         "text": "开车上路",
         "note": "",
@@ -831,5 +840,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785741750452
+  "updatedAt": 1785741759376
 }
