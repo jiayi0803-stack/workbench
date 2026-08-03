@@ -29,6 +29,30 @@
       "subs": []
     },
     {
+      "id": "health",
+      "name": "健康记录",
+      "emoji": "📊",
+      "builtin": true,
+      "type": "health",
+      "subs": []
+    },
+    {
+      "id": "calendar",
+      "name": "完成度一览",
+      "emoji": "📅",
+      "builtin": true,
+      "type": "calendar",
+      "subs": []
+    },
+    {
+      "id": "asset",
+      "name": "资产管理",
+      "emoji": "💰",
+      "builtin": true,
+      "type": "asset",
+      "subs": []
+    },
+    {
       "id": "english",
       "name": "英语",
       "emoji": "🌏",
@@ -40,7 +64,44 @@
       "name": "数分",
       "emoji": "📐",
       "builtin": true,
-      "subs": []
+      "subs": [
+        {
+          "id": "id_mscny9n9lvm6",
+          "name": "数据透视表深度应用"
+        },
+        {
+          "id": "id_mscnzwf1jv9x",
+          "name": "高级函数与数据清洗"
+        },
+        {
+          "id": "id_msco2jvly886",
+          "name": "可视化与仪表板"
+        },
+        {
+          "id": "id_msco4cqt5zqb",
+          "name": "Power BI入门与业务分析"
+        },
+        {
+          "id": "id_msco5kgpmcro",
+          "name": "Python数据分析基础"
+        },
+        {
+          "id": "id_msco6yauah9m",
+          "name": "SQL语言掌握"
+        },
+        {
+          "id": "id_msco8btzdd8u",
+          "name": "数据可视化进阶"
+        },
+        {
+          "id": "id_mscoa3c0g07p",
+          "name": "统计分析基础"
+        },
+        {
+          "id": "id_mscobbb9ge5g",
+          "name": "数据分析方法论"
+        }
+      ]
     },
     {
       "id": "finance",
@@ -82,30 +143,6 @@
       "name": "关于我",
       "emoji": "🌿",
       "builtin": true,
-      "subs": []
-    },
-    {
-      "id": "health",
-      "name": "健康记录",
-      "emoji": "📊",
-      "builtin": true,
-      "type": "health",
-      "subs": []
-    },
-    {
-      "id": "calendar",
-      "name": "日历打卡",
-      "emoji": "📅",
-      "builtin": true,
-      "type": "calendar",
-      "subs": []
-    },
-    {
-      "id": "asset",
-      "name": "资产管理",
-      "emoji": "💰",
-      "builtin": true,
-      "type": "asset",
       "subs": []
     },
     {
@@ -269,8 +306,352 @@
         "order": 0
       }
     ],
+    "health": [],
+    "calendar": [],
+    "asset": [],
     "english": [],
-    "math": [],
+    "math": [
+      {
+        "id": "id_mscobxd5gvgk",
+        "text": "业务指标体系建设",
+        "note": "",
+        "subId": "id_mscobbb9ge5g",
+        "done": false,
+        "created": 1785727976873,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscobrayn5t9",
+        "text": "用户分群与RFM模型",
+        "note": "",
+        "subId": "id_mscobbb9ge5g",
+        "done": false,
+        "created": 1785727969018,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscobk4fmak5",
+        "text": "漏斗分析、留存分析",
+        "note": "",
+        "subId": "id_mscobbb9ge5g",
+        "done": false,
+        "created": 1785727959711,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscoau3l28oe",
+        "text": "假设检验入门",
+        "note": "",
+        "subId": "id_mscoa3c0g07p",
+        "done": false,
+        "created": 1785727925985,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscoananm4wn",
+        "text": "A/B测试概念理解",
+        "note": "",
+        "subId": "id_mscoa3c0g07p",
+        "done": false,
+        "created": 1785727917167,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscoah9lvk9q",
+        "text": "相关性与回归基础",
+        "note": "",
+        "subId": "id_mscoa3c0g07p",
+        "done": false,
+        "created": 1785727909353,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscoaazr2ih6",
+        "text": "描述性统计分析",
+        "note": "",
+        "subId": "id_mscoa3c0g07p",
+        "done": false,
+        "created": 1785727901223,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco92lrpft2",
+        "text": "用Python制作专业图表",
+        "note": "",
+        "subId": "id_msco8btzdd8u",
+        "done": false,
+        "created": 1785727843695,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco8v3zxd91",
+        "text": "Plotly交互式可视化",
+        "note": "",
+        "subId": "id_msco8btzdd8u",
+        "done": false,
+        "created": 1785727833983,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco8n51z9p7",
+        "text": "Matplotlib/Seaborn图表制作",
+        "note": "",
+        "subId": "id_msco8btzdd8u",
+        "done": false,
+        "created": 1785727823653,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco7rs8rfyp",
+        "text": "实际数据库连接练习",
+        "note": "",
+        "subId": "id_msco6yauah9m",
+        "done": false,
+        "created": 1785727783016,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco7j7ikksy",
+        "text": "子查询与窗口函数",
+        "note": "",
+        "subId": "id_msco6yauah9m",
+        "done": false,
+        "created": 1785727771902,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco7cbrtp1g",
+        "text": "聚合函数与分组",
+        "note": "",
+        "subId": "id_msco6yauah9m",
+        "done": false,
+        "created": 1785727762983,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco75xxo714",
+        "text": "SQL基础语法(SELECT, WHERE, JOIN)",
+        "note": "",
+        "subId": "id_msco6yauah9m",
+        "done": false,
+        "created": 1785727754709,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco6izw0nsi",
+        "text": "用Python自动化Excel任务",
+        "note": "",
+        "subId": "id_msco5kgpmcro",
+        "done": false,
+        "created": 1785727724972,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco6ck37jus",
+        "text": "NumPy数组操作",
+        "note": "",
+        "subId": "id_msco5kgpmcro",
+        "done": false,
+        "created": 1785727716627,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco62r1kzkc",
+        "text": "Pandas数据处理基础",
+        "note": "",
+        "subId": "id_msco5kgpmcro",
+        "done": false,
+        "created": 1785727703917,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco5vj1kre2",
+        "text": "Python环境搭建",
+        "note": "",
+        "subId": "id_msco5kgpmcro",
+        "done": false,
+        "created": 1785727694557,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco554bmuju",
+        "text": "制作第一份业务报告",
+        "note": "",
+        "subId": "id_msco4cqt5zqb",
+        "done": false,
+        "created": 1785727660331,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco4xlz6nzl",
+        "text": "DAX基础度量值",
+        "note": "",
+        "subId": "id_msco4cqt5zqb",
+        "done": false,
+        "created": 1785727650599,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco4qf3727e",
+        "text": "数据建模关系建立",
+        "note": "",
+        "subId": "id_msco4cqt5zqb",
+        "done": false,
+        "created": 1785727641279,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco4j3tw1ov",
+        "text": "Power BI Desktop基础",
+        "note": "",
+        "subId": "id_msco4cqt5zqb",
+        "done": false,
+        "created": 1785727631801,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco3ezm4srx",
+        "text": "仪表板布局设计原则",
+        "note": "",
+        "subId": "id_msco2jvly886",
+        "done": false,
+        "created": 1785727579810,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco377z9vum",
+        "text": "动态图表制作",
+        "note": "",
+        "subId": "id_msco2jvly886",
+        "done": false,
+        "created": 1785727569743,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco2zgllczf",
+        "text": "迷你图与图表组合",
+        "note": "",
+        "subId": "id_msco2jvly886",
+        "done": false,
+        "created": 1785727559685,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco2rq3yr8b",
+        "text": "条件格式高级应用",
+        "note": "",
+        "subId": "id_msco2jvly886",
+        "done": false,
+        "created": 1785727549659,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco1s9k3qfj",
+        "text": "GETPIVOTDATA函数",
+        "note": "",
+        "subId": "id_mscny9n9lvm6",
+        "done": false,
+        "created": 1785727503704,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco1jp51clw",
+        "text": "切片器与时间线联动",
+        "note": "",
+        "subId": "id_mscny9n9lvm6",
+        "done": false,
+        "created": 1785727492601,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco0r75jnkq",
+        "text": "数组公式基础",
+        "note": "",
+        "subId": "id_mscnzwf1jv9x",
+        "done": false,
+        "created": 1785727455665,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco0hewuhu8",
+        "text": "INDEX-MATCH高级匹配",
+        "note": "",
+        "subId": "id_mscnzwf1jv9x",
+        "done": false,
+        "created": 1785727442984,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_msco05zlnbb1",
+        "text": "TEXT, DATE函数族",
+        "note": "",
+        "subId": "id_mscnzwf1jv9x",
+        "done": false,
+        "created": 1785727428177,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscnzi8b9zh3",
+        "text": "数据透视图动态仪表板",
+        "note": "",
+        "subId": "id_mscny9n9lvm6",
+        "done": false,
+        "created": 1785727397387,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscnz5te4vyo",
+        "text": "计算字段与计算项",
+        "note": "",
+        "subId": "id_mscny9n9lvm6",
+        "done": false,
+        "created": 1785727381298,
+        "date": "2026-08-03",
+        "order": 0
+      },
+      {
+        "id": "id_mscnytp92elw",
+        "text": "POWER QUERY入门",
+        "note": "",
+        "subId": "id_mscnzwf1jv9x",
+        "done": false,
+        "created": 1785727365597,
+        "date": "2026-08-03",
+        "order": 0
+      }
+    ],
     "finance": [
       {
         "id": "id_ms9x9p6hpjnl",
@@ -400,23 +781,8 @@
     ]
   },
   "health": {
-    "sleep": [
-      {
-        "id": "id_mscllim8xf9v",
-        "date": "2026-08-02",
-        "start": "00:22",
-        "end": "07:05",
-        "rating": 5
-      }
-    ],
-    "body": [
-      {
-        "id": "id_msclmri4zknn",
-        "date": "2026-08-03",
-        "weight": 53.85,
-        "waist": 77.5
-      }
-    ]
+    "sleep": [],
+    "body": []
   },
   "assets": {
     "fields": [
@@ -425,12 +791,12 @@
     ],
     "records": []
   },
-  "currentCatId": "math",
+  "currentCatId": "work",
   "currentSubId": "",
   "userName": "嘉怡的精神世界",
   "userSub": "这工作台是我建的，这人生也是。",
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785728855169
+  "updatedAt": 1785741376125
 }
