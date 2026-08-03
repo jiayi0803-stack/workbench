@@ -378,7 +378,17 @@
         "order": 0
       }
     ],
-    "cat_mscligyl": []
+    "cat_mscligyl": [
+      {
+        "id": "id_mscliv3gfzdz",
+        "text": "收拾屋子，没用的东西扔掉",
+        "note": "",
+        "done": false,
+        "created": 1785723261676,
+        "date": "2026-08-03",
+        "order": 0
+      }
+    ]
   },
   "health": {
     "sleep": [],
@@ -398,5 +408,5 @@
   "heroSubs": {
     "finance": "财富积累的本质是换取自由"
   },
-  "updatedAt": 1785723245369
+  "updatedAt": 1785723263692
 }
