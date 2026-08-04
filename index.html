@@ -577,8 +577,8 @@
       <button class="manage-btn" id="btn-export" style="flex:1; text-align:center; border:1px solid var(--line)">⬆ 导出数据</button>
       <button class="manage-btn" id="btn-import" style="flex:1; text-align:center; border:1px solid var(--line)">⬇ 导入数据</button>
     </div>
-    <button class="manage-btn" id="btn-cloud-restore" style="text-align:center; border:1px solid var(--accent); color:var(--accent); background:var(--accent-soft)">☁ 从云端恢复数据</button>
-    <button class="manage-btn" id="btn-set-token" style="text-align:center; border:1px solid var(--line); color:var(--ink-soft)">🔑 设置同步 Token</button>
+    <button class="manage-btn" id="btn-cloud-restore" style="text-align:center; border:1px solid var(--accent); color:var(--accent); background:var(--accent-soft)">☁ 从云端拉取数据</button>
+    <button class="manage-btn" id="btn-set-token" style="text-align:center; border:1px solid var(--line); color:var(--ink-soft)">🔑 设置同步令牌</button>
     <button class="manage-btn" id="btn-export-source" style="text-align:center; border:1px solid var(--line); color:var(--ink-soft)">🧾 导出页面源码</button>
     <input type="file" id="import-file" accept="application/json,.json" style="display:none" />
   </footer>
@@ -788,80 +788,92 @@ function save() {
     cats: state.cats, items: state.items, health: state.health, assets: state.assets, currentCatId, currentSubId,
     userName: state.userName, userSub: state.userSub, heroSubs: state.heroSubs
   }));
-  cloudPush(); // 自动同步到 GitHub
+  cloudPush(); // 自动同步到 Gitee
 }
 function genId() { return 'id_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 
-/* ========== GitHub 云端同步（用仓库当数据库） ========== */
-// Token 不硬编码在代码里，避免被 GitHub Secret Scanning 撤销
-// 第一次使用时让用户输入，存到 localStorage
-const GH_TOKEN_KEY = 'gh_sync_token';
-function getGHToken() {
-  return localStorage.getItem(GH_TOKEN_KEY) || '';
+/* ========== Gitee 云端同步（自动双向同步） ========== */
+// 用 Gitee API 读写 data.json，实现自动同步
+// Token 存 localStorage，不硬编码在代码里
+const GITEE_TOKEN_KEY = 'gitee_sync_token';
+const GITEE_OWNER = 'hu-jiayi0803';
+const GITEE_REPO = 'workbench';
+const GITEE_DATA_FILE = 'data.json';
+const GITEE_BRANCH = 'master';
+function getSyncToken() {
+  return localStorage.getItem(GITEE_TOKEN_KEY) || '';
 }
-function setGHToken(t) {
-  localStorage.setItem(GH_TOKEN_KEY, t);
+function setSyncToken(t) {
+  localStorage.setItem(GITEE_TOKEN_KEY, t);
 }
-// 首次使用时自动提示输入 token（如果没有）
-function ensureToken() {
-  if (!getGHToken()) {
-    const t = prompt('请输入 GitHub Token（用于云端同步，仅保存在本地浏览器，不会上传）：\n\n在 GitHub Settings → Developer settings → Personal access tokens 生成，权限选 Contents: Read and write，仓库选 workbench。');
-    if (t && t.trim()) {
-      setGHToken(t.trim());
-      return true;
-    }
+function ensureSyncToken() {
+  if (!getSyncToken()) {
+    const t = prompt('请输入 Gitee 私人令牌（用于自动同步，仅保存在本地浏览器）：\n\n在 Gitee → 设置 → 私人令牌 生成，权限勾选 projects。');
+    if (t && t.trim()) { setSyncToken(t.trim()); return true; }
     return false;
   }
   return true;
 }
-const GH_OWNER = 'Jiayi0803-stack';
-const GH_REPO = 'workbench';
-const GH_DATA_FILE = 'data.json';
-const GH_BRANCH = 'main';
 
-// 防抖：短时间内多次保存只推送一次
+// 防抖推送
 let pushTimer = null;
+let isPushing = false;
 function cloudPush() {
-  if (!getGHToken()) return; // 没 token 不同步
+  if (!getSyncToken()) return; // 没 token 不同步
   clearTimeout(pushTimer);
   pushTimer = setTimeout(async () => {
+    await doCloudPush();
+  }, 1500);
+}
+
+async function doCloudPush() {
+  if (isPushing) return;
+  isPushing = true;
+  try {
+    const token = getSyncToken();
     const data = {
-      cats: state.cats, items: state.items, health: state.health, assets: state.assets, currentCatId, currentSubId,
+      cats: state.cats, items: state.items, health: state.health, assets: state.assets,
+      currentCatId, currentSubId,
       userName: state.userName, userSub: state.userSub, heroSubs: state.heroSubs,
       updatedAt: Date.now()
     };
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-    // 获取现有文件的 sha（更新需要）
+    // 先获取现有文件的 sha（Gitee 更新需要）
     let sha = null;
     try {
-      const r = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}`, {
-        headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
-      });
+      const r = await fetch(`https://gitee.com/api/v5/repos/${GITEE_OWNER}/${GITEE_REPO}/contents/${GITEE_DATA_FILE}?ref=${GITEE_BRANCH}&access_token=${token}`);
       if (r.ok) { const j = await r.json(); sha = j.sha; }
     } catch (e) {}
-    // 上传/更新文件
-    try {
-      await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}`, {
-        method: 'PUT',
-        headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json', 'User-Agent': 'workbench' },
-        body: JSON.stringify({ message: 'sync data', content: content, sha: sha, branch: GH_BRANCH })
-      });
-    } catch (e) {}
-  }, 2000);
+    // PUT 更新文件
+    const body = new FormData();
+    body.append('access_token', token);
+    body.append('content', content);
+    body.append('message', 'sync ' + new Date().toLocaleString('zh-CN'));
+    body.append('branch', GITEE_BRANCH);
+    if (sha) body.append('sha', sha);
+    const r2 = await fetch(`https://gitee.com/api/v5/repos/${GITEE_OWNER}/${GITEE_REPO}/contents/${GITEE_DATA_FILE}`, {
+      method: 'PUT', body: body
+    });
+    if (r2.ok) {
+      // 推送成功，更新本地 updatedAt
+      const localRaw = localStorage.getItem(STORAGE_KEY);
+      const localObj = localRaw ? JSON.parse(localRaw) : {};
+      localObj.updatedAt = data.updatedAt;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(localObj));
+    }
+  } catch (e) { console.warn('cloudPush failed:', e); }
+  isPushing = false;
 }
 
-// 从 GitHub 拉取数据
-// force=true 时忽略时间戳比较，强制用云端覆盖本地（用于手动恢复或本地数据丢失场景）
+// 从 Gitee 拉取数据
 async function cloudPull(force) {
-  if (!getGHToken()) {
-    // 没 token 时提示输入（仅 force 模式或首次启动）
-    if (force && !ensureToken()) return false;
+  if (!getSyncToken()) {
+    if (force && !ensureSyncToken()) return false;
     else if (!force) return false;
   }
   try {
-    const r = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}?ref=${GH_BRANCH}`, {
-      headers: { 'Authorization': `Bearer ${getGHToken()}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'workbench' }
-    });
+    const token = getSyncToken();
+    const r = await fetch(`https://gitee.com/api/v5/repos/${GITEE_OWNER}/${GITEE_REPO}/contents/${GITEE_DATA_FILE}?ref=${GITEE_BRANCH}&access_token=${token}&t=${Date.now()}`);
     if (!r.ok) return false;
     const j = await r.json();
     const data = JSON.parse(decodeURIComponent(escape(atob(j.content))));
@@ -871,9 +883,9 @@ async function cloudPull(force) {
     const cloudNewer = (data.updatedAt || 0) > localUpdated;
     const localEmpty = !localRaw || !localObj.items || Object.keys(localObj.items).length === 0
       || Object.values(localObj.items).every(arr => !arr || arr.length === 0);
-    // 云端更新、或本地为空、或强制恢复时，用云端数据覆盖
     if (cloudNewer || localEmpty || force) {
-      state.cats = data.cats || state.cats;
+      // 保护：云端 cats 为空时不覆盖（避免渲染崩溃）
+      if (data.cats && data.cats.length > 0) state.cats = data.cats;
       state.items = data.items || state.items;
       if (data.currentCatId) currentCatId = data.currentCatId;
       if (data.currentSubId !== undefined) currentSubId = data.currentSubId;
@@ -2012,17 +2024,19 @@ document.getElementById('btn-manage').addEventListener('click', openManage);
 document.getElementById('btn-add-cat').addEventListener('click', () => openCatModal(null));
 
 /* ========== 导出 / 导入数据 ========== */
-// 导出：把当前 state 打包成 JSON 文件下载
+// 导出：把当前 state 打包成 JSON 文件下载（格式与 data.json 一致，方便上传 GitHub）
 document.getElementById('btn-export').addEventListener('click', () => {
   const data = {
-    version: 2,
-    exportedAt: new Date().toISOString(),
     cats: state.cats,
     items: state.items,
+    health: state.health,
+    assets: state.assets,
     currentCatId,
+    currentSubId,
     userName: state.userName,
     userSub: state.userSub,
-    heroSubs: state.heroSubs
+    heroSubs: state.heroSubs,
+    updatedAt: Date.now()
   };
   const json = JSON.stringify(data, null, 2);
   // 生成下载
@@ -2030,17 +2044,16 @@ document.getElementById('btn-export').addEventListener('click', () => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  const d = new Date();
-  a.download = `工作台备份_${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}.json`;
+  a.download = 'data.json';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  toast('已导出备份文件');
-  // 同时在微信里，把 JSON 文本也复制到剪贴板兜底
+  toast('已导出 data.json 备份');
+  // 同时复制到剪贴板兜底
   if (navigator.clipboard) {
     navigator.clipboard.writeText(json).then(() => {
-      setTimeout(() => toast('数据已复制到剪剪贴板，可粘贴到文件'), 1800);
+      setTimeout(() => toast('数据已复制到剪贴板'), 1800);
     }).catch(() => {});
   }
 });
@@ -2058,35 +2071,38 @@ document.getElementById('btn-import').addEventListener('contextmenu', (e) => {
   if (text && text.trim()) importFromText(text.trim());
 });
 
-// 从云端（GitHub data.json）强制恢复数据
+// 从云端（jsDelivr CDN）拉取数据
 document.getElementById('btn-cloud-restore').addEventListener('click', async () => {
   const btn = document.getElementById('btn-cloud-restore');
+  if (!getSyncToken()) {
+    if (!ensureSyncToken()) { toast('请先设置同步令牌'); return; }
+  }
   if (!confirm('将从云端拉取最新数据并覆盖当前本地数据，是否继续？')) return;
-  btn.textContent = '☁ 恢复中...'; btn.disabled = true;
+  btn.textContent = '☁ 拉取中...'; btn.disabled = true;
   const ok = await cloudPull(true);
-  btn.textContent = '☁ 从云端恢复数据'; btn.disabled = false;
+  btn.textContent = '☁ 从云端拉取数据'; btn.disabled = false;
   if (ok) {
     closeDrawer();
     renderDate();
     renderAll();
-    toast('已从云端恢复数据 ✓');
+    toast('已从云端拉取数据 ✓');
   } else {
-    toast('恢复失败：网络或 Token 问题');
+    toast('拉取失败：请检查网络或令牌');
   }
 });
 
-// 设置同步 Token
+// 设置同步令牌
 document.getElementById('btn-set-token').addEventListener('click', () => {
-  const current = getGHToken();
+  const current = getSyncToken();
   const hint = current ? '（已设置，重新输入可替换）' : '';
-  const t = prompt('请输入 GitHub Token' + hint + '：\n\n仅保存在本地浏览器，不会上传。权限选 Contents: Read and write，仓库选 workbench。', current);
+  const t = prompt('请输入 Gitee 私人令牌' + hint + '：\n\n在 Gitee → 设置 → 私人令牌 生成，权限勾选 projects。仅保存在本地浏览器。', current);
   if (t !== null && t.trim()) {
-    setGHToken(t.trim());
+    setSyncToken(t.trim());
     const btn = document.getElementById('btn-set-token');
-    btn.textContent = '🔑 同步 Token 已设置 ✓';
+    btn.textContent = '🔑 令牌已设置 ✓';
     btn.style.color = 'var(--accent)';
-    toast('Token 已保存，云端同步已启用');
-    setTimeout(() => { btn.textContent = '🔑 设置同步 Token'; btn.style.color = 'var(--ink-soft)'; }, 2000);
+    toast('令牌已保存，自动同步已启用');
+    setTimeout(() => { btn.textContent = '🔑 设置同步令牌'; btn.style.color = 'var(--ink-soft)'; }, 2000);
   }
 });
 
